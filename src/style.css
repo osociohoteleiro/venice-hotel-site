@@ -1,29 +1,29 @@
 /* ===================================
    Chalés Mirante da Lagoinha
-   Design: Clean / Coastal Blue
-   Palette: Blue + Gray
+   Design: Coastal Warm
+   Palette: Blue + Orange + Sandy neutrals
    =================================== */
 
 :root {
   /* Primary — Blues */
-  --green-900: #1a2a3a;
-  --green-800: #288cc1;
-  --green-700: #2a87bd;
-  --green-50: #f0f6fa;
+  --blue-900: #1a2a3a;
+  --blue-800: #288cc1;
+  --blue-700: #2a87bd;
+  --blue-50: #eef6fb;
 
-  /* Accent — Blue highlight */
-  --terra: #288cc1;
-  --terra-dark: #1e6e9a;
-  --terra-light: #5bb0db;
+  /* Accent — Orange/Warm */
+  --terra: #e07a2f;
+  --terra-dark: #c4691f;
+  --terra-light: #f0a96e;
 
-  /* Neutrals — Cool Gray */
-  --cream: #f5f7f9;
-  --sand: #dde1e6;
-  --gray-100: #f0f2f4;
-  --gray-300: #c8cdd3;
-  --gray-500: #6b7280;
-  --gray-700: #374151;
-  --gray-900: #1f2937;
+  /* Neutrals — Sandy Warm */
+  --cream: #faf8f5;
+  --sand: #e8e0d6;
+  --gray-100: #f5f2ef;
+  --gray-300: #d1cbc4;
+  --gray-500: #7a746d;
+  --gray-700: #3d3831;
+  --gray-900: #2b2621;
 
   /* Functional */
   --whatsapp: #25d366;
@@ -102,7 +102,7 @@ ul {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 600;
-  color: var(--green-900);
+  color: var(--blue-900);
   line-height: 1.15;
   margin-bottom: 1.25rem;
 }
@@ -129,7 +129,7 @@ ul {
 .btn--primary:hover {
   background: var(--terra-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(40, 140, 193, 0.35);
+  box-shadow: 0 8px 25px rgba(224, 122, 47, 0.35);
 }
 
 .btn--ghost {
@@ -153,13 +153,14 @@ ul {
 }
 
 .btn--phone {
-  background: var(--green-800);
+  background: transparent;
   color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
 }
 .btn--phone:hover {
-  background: var(--green-700);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(26, 42, 58, 0.35);
 }
 
 /* ===== Navigation ===== */
@@ -174,10 +175,10 @@ ul {
 }
 
 .nav.scrolled {
-  background: rgba(26, 42, 58, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
   padding: 0.75rem 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 .nav__inner {
@@ -192,6 +193,11 @@ ul {
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.02em;
+  transition: color 0.4s var(--ease);
+}
+
+.nav.scrolled .nav__logo {
+  color: var(--blue-900);
 }
 
 .nav__links {
@@ -204,7 +210,7 @@ ul {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.9rem;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.4s var(--ease);
   position: relative;
 }
 
@@ -220,6 +226,18 @@ ul {
 }
 
 .nav__links a:hover {
+  color: #fff;
+}
+
+.nav.scrolled .nav__links a {
+  color: var(--gray-700);
+}
+
+.nav.scrolled .nav__links a:hover {
+  color: var(--blue-900);
+}
+
+.nav.scrolled .nav__links a.nav__cta {
   color: #fff;
 }
 
@@ -262,6 +280,10 @@ ul {
   border-radius: 2px;
   transition: all 0.3s var(--ease);
   transform-origin: center;
+}
+
+.nav.scrolled .nav__toggle span {
+  background: var(--blue-900);
 }
 
 .nav__toggle.active span:nth-child(1) {
@@ -501,7 +523,7 @@ ul {
 /* ===== Chalés Section ===== */
 .chales {
   padding: var(--section-pad) 0;
-  background: var(--green-50);
+  background: var(--blue-50);
 }
 
 .chales__header {
@@ -559,7 +581,7 @@ ul {
 .chales__amenities li strong {
   display: block;
   font-size: 1rem;
-  color: var(--green-900);
+  color: var(--blue-900);
   margin-bottom: 0.15rem;
 }
 
@@ -667,20 +689,20 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--green-800);
+  color: var(--blue-800);
   transition: background 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 .gallery__btn:hover {
-  background: var(--green-800);
-  border-color: var(--green-800);
+  background: var(--blue-800);
+  border-color: var(--blue-800);
   color: #fff;
 }
 
 /* ===== Amenities ===== */
 .amenities {
   padding: var(--section-pad) 0;
-  background: var(--green-900);
+  background: var(--blue-900);
   color: #fff;
 }
 
@@ -769,7 +791,7 @@ ul {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--green-900);
+  color: var(--blue-900);
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--sand);
@@ -792,7 +814,7 @@ ul {
 }
 
 .info__row strong {
-  color: var(--green-900);
+  color: var(--blue-900);
   font-size: 0.95rem;
   text-align: right;
 }
@@ -809,7 +831,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--green-50);
+  background: var(--blue-50);
 }
 
 .location__content p {
@@ -895,7 +917,7 @@ ul {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 600;
-  color: var(--green-900);
+  color: var(--blue-900);
   margin-bottom: 0.5rem;
 }
 
@@ -962,7 +984,7 @@ ul {
 
 /* ===== Footer ===== */
 .footer {
-  background: var(--gray-900);
+  background: #1a2a3a;
   color: rgba(255, 255, 255, 0.7);
   padding: 4rem 0 0;
 }
@@ -1037,7 +1059,7 @@ ul {
     right: -100%;
     width: 300px;
     height: 100vh;
-    background: var(--green-900);
+    background: var(--blue-900);
     flex-direction: column;
     justify-content: center;
     align-items: center;
