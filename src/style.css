@@ -707,6 +707,15 @@ ul {
   color: rgba(255, 255, 255, 0.4);
 }
 
+.footer-bottom a {
+  color: var(--gold);
+  transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+  color: var(--gold-light);
+}
+
 /* ===== Animations ===== */
 .fade-in {
   opacity: 0;
