@@ -934,6 +934,34 @@ ul {
   font-size: 0.95rem;
 }
 
+.btn-card-whats {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-card-whats svg {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.btn-card-whats:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
 /* ===== CASAMENTOS ===== */
 .section-casamentos {
   overflow: hidden;
@@ -1043,7 +1071,7 @@ ul {
 
 .modal-content {
   position: relative;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   background: var(--white);
   padding: 40px;
@@ -1081,24 +1109,38 @@ ul {
 .modal-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .modal-thumb {
+  position: relative;
   overflow: hidden;
   cursor: pointer;
   aspect-ratio: 4 / 3;
+  background: var(--gray-100);
 }
 
 .modal-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
+}
+
+.modal-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.4s ease;
 }
 
 .modal-thumb:hover img {
   transform: scale(1.08);
+}
+
+.modal-thumb:hover::after {
+  background: rgba(0, 0, 0, 0.12);
 }
 
 /* Lightbox */
@@ -1250,6 +1292,22 @@ ul {
   font-style: italic;
 }
 
+.casamentos-contato {
+  font-style: normal !important;
+  font-size: 1rem !important;
+  margin-bottom: 28px !important;
+}
+
+.casamentos-contato a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.casamentos-contato a:hover {
+  text-decoration: underline;
+}
+
 .btn-casamentos {
   display: inline-flex;
   align-items: center;
@@ -1327,6 +1385,86 @@ ul {
   color: var(--gray-500);
   margin-bottom: 20px;
   font-size: 1.05rem;
+}
+
+/* ===== SPA & BEM-ESTAR ===== */
+.section-spa {
+  background: var(--white);
+}
+
+.spa-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.spa-image {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.spa-image img {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  background: var(--gray-100);
+  transition: transform 0.6s ease;
+  cursor: zoom-in;
+}
+
+.spa-image:hover img {
+  transform: scale(1.05);
+}
+
+.spa-text .spa-heading {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 1.9rem;
+  color: var(--gray-900);
+  margin: 10px 0 18px;
+}
+
+.spa-text p {
+  color: var(--gray-500);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.spa-contato a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.spa-contato a:hover {
+  text-decoration: underline;
+}
+
+.spa-fotos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.spa-foto {
+  overflow: hidden;
+}
+
+.spa-foto img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.6s ease;
+}
+
+.spa-foto:hover img {
+  transform: scale(1.05);
 }
 
 /* ===== GALERIA ===== */
@@ -1666,6 +1804,10 @@ ul {
     gap: 40px;
   }
 
+  .spa-grid {
+    gap: 40px;
+  }
+
   .suite-info {
     padding: 40px 30px;
   }
@@ -1740,6 +1882,22 @@ ul {
 
   .restaurante-img-main img,
   .restaurante-img-secondary img {
+    height: 250px;
+  }
+
+  .spa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spa-image img {
+    height: 300px;
+  }
+
+  .spa-fotos {
+    grid-template-columns: 1fr;
+  }
+
+  .spa-foto img {
     height: 250px;
   }
 

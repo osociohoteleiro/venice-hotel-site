@@ -151,6 +151,17 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// --- Spa Images Lightbox ---
+const spaZoomImages = document.querySelectorAll('.spa-zoom');
+spaZoomImages.forEach((img, i) => {
+  img.addEventListener('click', () => {
+    lightboxImages = Array.from(spaZoomImages).map(el => el.getAttribute('src'));
+    currentLightboxIndex = i;
+    lightboxImg.src = lightboxImages[currentLightboxIndex];
+    lightbox.classList.add('active');
+  });
+});
+
 // --- Sticky Booking Form ---
 const heroSection = document.querySelector('.hero');
 const bookingFormEl = document.querySelector('.hero-booking');
