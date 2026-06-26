@@ -162,6 +162,17 @@ spaZoomImages.forEach((img, i) => {
   });
 });
 
+// --- Galeria Lightbox ---
+const galeriaImages = document.querySelectorAll('.galeria-item img');
+galeriaImages.forEach((img, i) => {
+  img.addEventListener('click', () => {
+    lightboxImages = Array.from(galeriaImages).map(el => el.getAttribute('src'));
+    currentLightboxIndex = i;
+    lightboxImg.src = lightboxImages[currentLightboxIndex];
+    lightbox.classList.add('active');
+  });
+});
+
 // --- Sticky Booking Form ---
 const heroSection = document.querySelector('.hero');
 const bookingFormEl = document.querySelector('.hero-booking');

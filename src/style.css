@@ -849,9 +849,8 @@ ul {
 }
 
 .suite-amenities {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  column-count: 2;
+  column-gap: 30px;
   margin-bottom: 30px;
 }
 
@@ -860,6 +859,8 @@ ul {
   color: var(--gray-500);
   padding-left: 20px;
   position: relative;
+  margin-bottom: 8px;
+  break-inside: avoid;
 }
 
 .suite-amenities li::before {
@@ -1493,6 +1494,7 @@ ul {
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s ease;
+  cursor: zoom-in;
 }
 
 .galeria-item:hover img {
@@ -1865,7 +1867,7 @@ ul {
   }
 
   .suite-amenities {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 
   .experiencias-grid {
