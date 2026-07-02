@@ -151,17 +151,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// --- Spa Images Lightbox ---
-const spaZoomImages = document.querySelectorAll('.spa-zoom');
-spaZoomImages.forEach((img, i) => {
-  img.addEventListener('click', () => {
-    lightboxImages = Array.from(spaZoomImages).map(el => el.getAttribute('src'));
-    currentLightboxIndex = i;
-    lightboxImg.src = lightboxImages[currentLightboxIndex];
-    lightbox.classList.add('active');
-  });
-});
-
 // --- Galeria Lightbox ---
 const galeriaImages = document.querySelectorAll('.galeria-item img');
 galeriaImages.forEach((img, i) => {
